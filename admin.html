@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>HealthDesk - School Clinic</title>
+
+    <link
+        rel="manifest"
+        href="manifest.json"
+    >
+
+    <meta
+        name="theme-color"
+        content="#2e8b57"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- TOP HEADER -->
+
+    <header class="top-header">
+
+        <div class="header-logo">
+
+            <img
+                src="icon-192.png"
+                alt="HealthDesk Logo"
+            >
+
+        </div>
+
+
+        <div class="header-title">
+
+            <h1>HEALTHDESK</h1>
+
+            <p>School Clinic Appointment System</p>
+
+        </div>
+
+
+        <button
+            id="installBtn"
+            class="install-btn"
+            type="button"
+        >
+            📱 Download App
+        </button>
+
+    </header>
+
+
+
+    <!-- LOGIN / SIGN UP -->
+
+    <main class="auth-container">
+
+
+        <!-- LOGIN SECTION -->
+
+        <section
+            id="loginSection"
+            class="auth-card"
+        >
+
+            <h2>
+                Welcome Back
+            </h2>
+
+            <p class="auth-subtitle">
+                Log in to your HealthDesk account
+            </p>
+
+
+            <form
+                id="loginForm"
+                method="POST"
+                action="login.php"
+            >
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="loginUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginUsername"
+                        name="username"
+                        placeholder="Enter your username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- LOGIN MESSAGE -->
+
+                <p
+                    id="loginMessage"
+                    class="form-message"
+                ></p>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Log In
+                </button>
+
+
+            </form>
+
+
+            <!-- SWITCH TO SIGN UP -->
+
+            <p class="switch-text">
+
+                Don't have an account?
+
+                <button
+                    type="button"
+                    id="showSignup"
+                    class="link-btn"
+                >
+                    Create an account
+                </button>
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- SIGN UP SECTION -->
+
+        <section
+            id="signupSection"
+            class="auth-card hidden"
+        >
+
+            <h2>
+                Create Account
+            </h2>
+
+            <p class="auth-subtitle">
+                Register for HealthDesk
+            </p>
+
+
+            <form
+                id="signupForm"
+                method="POST"
+                action="signup.php"
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="signupEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- USERNAME -->
+
+                <div class="form-group">
+
+                    <label for="signupUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="signupUsername"
+                        name="username"
+                        placeholder="Create a username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="signupPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupPassword"
+                        name="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="signupConfirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="signupConfirmPassword"
+                        name="confirm_password"
+                        placeholder="Confirm your password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SIGN UP MESSAGE -->
+
+                <p
+                    id="signupMessage"
+                    class="form-message"
+                ></p>
+
+
+                <!-- SIGN UP BUTTON -->
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Create Account
+                </button>
+
+
+            </form>
+
+
+            <!-- SWITCH TO LOGIN -->
+
+            <p class="switch-text">
+
+                Already have an account?
+
+                <button
+                    type="button"
+                    id="showLogin"
+                    class="link-btn"
+                >
+                    Log in
+                </button>
+
+            </p>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 HealthDesk - School Clinic
+        </p>
+
+    </footer>
+
+
+
+    <!-- MAIN JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+    <!-- SERVICE WORKER -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register(
+                "./service-worker.js"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

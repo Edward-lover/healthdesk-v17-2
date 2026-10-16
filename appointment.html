@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Book an Appointment - HealthDesk</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e8b57">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="header-logo">
+            <img src="icon-192.png" alt="HealthDesk Logo">
+        </div>
+
+        <div class="header-title">
+            <h1>HEALTHDESK</h1>
+            <p>School Clinic</p>
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="page-nav">
+
+        <a href="dashboard.html">
+            Home
+        </a>
+
+        <a href="appointment.html" class="active">
+            Book Appointment
+        </a>
+
+        <a href="appointments.html">
+            My Appointment
+        </a>
+
+        <button id="logoutBtn" type="button">
+            Log Out
+        </button>
+
+    </nav>
+
+
+    <!-- APPOINTMENT FORM -->
+    <main class="appointment-container">
+
+        <section class="appointment-card">
+
+            <h1>Book an Appointment</h1>
+
+            <p>
+                Fill out the form below to request an appointment
+                with the school clinic.
+            </p>
+
+
+            <form id="appointmentForm">
+
+                <!-- APPOINTMENT TYPE -->
+                <div class="form-group">
+
+                    <label for="appointmentType">
+                        Appointment Type
+                    </label>
+
+                    <select
+                        id="appointmentType"
+                        name="appointmentType"
+                        required
+                    >
+
+                        <option value="">
+                            Select appointment type
+                        </option>
+
+                        <option value="Public">
+                            Public
+                        </option>
+
+                        <option value="Private">
+                            Private
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATE -->
+                <div class="form-group">
+
+                    <label for="appointmentDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointmentDate"
+                        name="appointmentDate"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TIME -->
+                <div class="form-group">
+
+                    <label for="appointmentTime">
+                        Time
+                    </label>
+
+                    <input
+                        type="time"
+                        id="appointmentTime"
+                        name="appointmentTime"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- REASON -->
+                <div class="form-group">
+
+                    <label for="appointmentReason">
+                        Reason for Appointment
+                    </label>
+
+                    <textarea
+                        id="appointmentReason"
+                        name="appointmentReason"
+                        placeholder="Enter the reason for your appointment..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+                <p
+                    id="appointmentMessage"
+                    class="form-message"
+                ></p>
+
+
+                <!-- BUTTONS -->
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        📅 Submit Appointment
+                    </button>
+
+                    <button
+                        type="button"
+                        class="secondary-btn"
+                        onclick="window.location.href='dashboard.html'"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 HealthDesk - School Clinic
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+
+    <!-- SERVICE WORKER -->
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register(
+                "./service-worker.js"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

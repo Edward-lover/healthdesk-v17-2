@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - HealthDesk</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e8b57">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="top-header">
+
+        <div class="header-logo">
+            <img src="icon-192.png" alt="HealthDesk Logo">
+        </div>
+
+        <div class="header-title">
+            <h1>HEALTHDESK</h1>
+            <p>School Clinic</p>
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- NAVIGATION -->
+    <!-- ============================= -->
+
+    <nav class="page-nav">
+
+        <a href="dashboard.html" class="active">
+            Home
+        </a>
+
+        <a href="appointment.html">
+            My Appointment
+        </a>
+
+        <button id="logoutBtn" type="button">
+            Log Out
+        </button>
+
+    </nav>
+
+
+    <!-- ============================= -->
+    <!-- DASHBOARD -->
+    <!-- ============================= -->
+
+    <main class="dashboard">
+
+        <!-- Welcome -->
+
+        <section class="welcome-section">
+
+            <h1>
+                Welcome 👋
+            </h1>
+
+            <p>
+                Welcome to the HealthDesk School Clinic System.
+            </p>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- STATISTICS -->
+        <!-- ============================= -->
+
+        <section class="stats-container">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Total Appointments
+                </h3>
+
+                <strong id="totalAppointments">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏳
+                </div>
+
+                <h3>
+                    Pending
+                </h3>
+
+                <strong id="pendingAppointments">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🩺
+                </div>
+
+                <h3>
+                    Student
+                </h3>
+
+                <strong id="studentNameDisplay">
+                    Student
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- NEXT APPOINTMENT -->
+        <!-- ============================= -->
+
+        <section class="next-appointment">
+
+            <div class="section-title">
+
+                <h2>
+                    Next Appointment
+                </h2>
+
+                <a href="appointments.html">
+                    View All
+                </a>
+
+            </div>
+
+
+            <div id="nextAppointment">
+
+                <div class="empty-dashboard">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <p>
+                        No upcoming appointment.
+                    </p>
+
+
+                    <!-- BOOK APPOINTMENT BUTTON -->
+
+                    <a
+                        href="appointment.html"
+                        class="book-appointment-btn"
+                    >
+                        📅 Book an Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer>
+
+        <p>
+            © 2026 HealthDesk - School Clinic
+        </p>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script src="script.js"></script>
+
+
+    <!-- SERVICE WORKER -->
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register(
+                "./service-worker.js"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

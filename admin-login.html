@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - HealthDesk</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e8b57">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="HealthDesk">
+
+</head>
+
+<body>
+
+    <!-- HEALTHDESK HEADER -->
+
+    <header class="top-header">
+
+        <div class="header-logo">
+            <img src="icon-192.png" alt="HealthDesk Logo">
+        </div>
+
+        <div class="header-title">
+            <h1>HEALTHDESK</h1>
+            <p>Clinic Administrator</p>
+        </div>
+
+        <button id="installBtn" class="install-btn">
+            📱 Download App
+        </button>
+
+    </header>
+
+
+    <main class="auth-container">
+
+        <div class="auth-card">
+
+            <div class="medical-icon">
+                🏥
+            </div>
+
+            <h1>
+                Admin Login
+            </h1>
+
+            <p class="auth-subtitle">
+                HealthDesk Clinic Administration
+            </p>
+
+
+            <form id="adminLoginForm">
+
+                <label for="adminEmail">
+                    Admin Email
+                </label>
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Enter admin email"
+                    required
+                >
+
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Enter admin password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="btn primary-btn full-width">
+
+                    Login as Admin
+
+                </button>
+
+            </form>
+
+
+            <p
+                id="adminLoginMessage"
+                class="form-description">
+            </p>
+
+
+            <p class="switch-text">
+
+                <a href="index.html">
+                    ← Back to Student Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            HealthDesk © 2026 | School Clinic
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            window.addEventListener("load", () => {
+
+                navigator.serviceWorker.register("./service-worker.js");
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

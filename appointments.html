@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Appointments - HealthDesk</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2e8b57">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+
+        <div class="header-logo">
+            <img
+                src="icon-192.png"
+                alt="HealthDesk Logo"
+            >
+        </div>
+
+        <div class="header-title">
+
+            <h1>
+                HEALTHDESK
+            </h1>
+
+            <p>
+                School Clinic
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="page-nav">
+
+        <a href="dashboard.html">
+            Home
+        </a>
+
+        <a href="appointment.html">
+            Book Appointment
+        </a>
+
+        <a
+            href="appointments.html"
+            class="active"
+        >
+            My Appointment
+        </a>
+
+        <button
+            id="logoutBtn"
+            type="button"
+        >
+            Log Out
+        </button>
+
+    </nav>
+
+
+    <!-- MY APPOINTMENTS -->
+    <main class="appointments-container">
+
+        <section class="appointment-card">
+
+            <div class="section-title">
+
+                <h1>
+                    My Appointments
+                </h1>
+
+                <a
+                    href="appointment.html"
+                    class="primary-btn"
+                >
+                    + Book Appointment
+                </a>
+
+            </div>
+
+
+            <p>
+                View your submitted school clinic appointments
+                and their current status.
+            </p>
+
+
+            <!-- FILTER -->
+            <div class="form-group">
+
+                <label for="appointmentFilter">
+                    Filter Appointments
+                </label>
+
+                <select id="appointmentFilter">
+
+                    <option value="all">
+                        All
+                    </option>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Approved">
+                        Approved
+                    </option>
+
+                    <option value="Rejected">
+                        Rejected
+                    </option>
+
+                    <option value="Completed">
+                        Completed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- APPOINTMENT LIST -->
+            <div
+                id="appointmentsList"
+                class="appointment-list"
+            >
+
+                <div class="empty-dashboard">
+
+                    <span>
+                        📅
+                    </span>
+
+                    <p>
+                        No appointments found.
+                    </p>
+
+                    <a
+                        href="appointment.html"
+                        class="book-appointment-btn"
+                    >
+                        📅 Book an Appointment
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 HealthDesk - School Clinic
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+
+    <!-- SERVICE WORKER -->
+    <script>
+
+        if ("serviceWorker" in navigator) {
+
+            navigator.serviceWorker.register(
+                "./service-worker.js"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
